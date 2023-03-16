@@ -17,8 +17,17 @@ public class characterstatus : MonoBehaviour
 
     public virtual void restoreHealth(int restore)
     {
+        
         currentHealth= Mathf. Clamp(currentHealth + restore,0,maxHealth);
         Debug.Log(currentHealth);
+    }
+
+    IEnumerator HealthIncrease()
+    {
+        for(int x=1;x<=maxHealth;x++)
+        {
+            yield return new WaitForSeconds(5);
+        }
     }
 
 
